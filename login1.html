@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log-In | Registration for COLLAB</title>
+        <link rel="stylesheet" href="./login_style.css">
+        <link rel="stylesheet" href="./animate.css">
+    </head>
+    <body>
+        <div class="hero animated flipInX">
+            <div class="form-box">
+                <div class="social-icons">
+                    <img src="./thunderbolt.png">
+               </div>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log-In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <form id="login" class="input-group" action="./index.html" autocomplete="on">
+                    <input type="text" class="input-field" placeholder="User ID" id="userid" required>
+                    <input type="password" class="input-field" placeholder="Password" id="pass" required>
+                    <input id="checkbox1" type="checkbox" class="check-box"><span>Remember Me</span>
+                    <button type="submit" class="submit-btn" onclick="redirect()"><font style="color: white;"><b>Log-In</b></font></button>
+                </form>
+                
+                <form id="register" class="input-group" action="./index.html" target="_blank" autocomplete="on">
+                    <input type="email" class="input-field" placeholder="Email ID" required>
+                    <input type="text" class="input-field" placeholder="User ID" required>
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <input type="checkbox" class="check-box" required><span>I agree to the Terms & Conditions</span>
+                    <button type="submit" class="submit-btn"><font style="color: white;"><b>Register</b></font></button>
+                </form>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+            
+            function redirect(){
+                //Pattern matching
+                var id = document.getElementById("userid").value;
+                var pass = document.getElementById("pass").value;
+                var id_patt = new RegExp("admin");
+                var pass_patt = new RegExp("admin123");
+                var res1 = id_patt.test(id);
+                var res2 = pass_patt.test(pass);
+                console.log(res1);
+                console.log(res2);
+                if(res1 && res2){
+                    document.getElementById("login").setAttribute("action", "./all_boards.html");
+                }
+                else{
+                    alert("Incorrect User ID or Password");
+                    document.getElementById("login").setAttribute("action", "#");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    /* background: linear-gradient(to top, #2980b9, #6dd5fa, #ffffff) fixed no-repeat; */
+
+
+
+    background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6) fixed no-repeat; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    /* background: url("./Amin.jpg") no-repeat; */
+}
+
+b.n1:hover, b.n2:hover, b.n3:hover, b.n4:hover{
+   color: #00AFFF;
+}
